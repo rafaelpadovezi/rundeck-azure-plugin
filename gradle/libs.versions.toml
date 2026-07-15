@@ -8,6 +8,7 @@ azureStorage = "8.6.6"
 azureKeyvaultCore = "1.0.0"
 commonsIo = "2.18.0"
 commonsNet = "3.11.1"
+commonsLang3 = "3.18.0"
 okhttp = "4.12.0"
 retrofit = "2.9.0"
 nimbusJoseJwt = "9.37.3"
@@ -30,6 +31,7 @@ groovyAll = { group = "org.apache.groovy", name = "groovy-all", version.ref = "g
 # HTTP and Networking
 commonsIo = { group = "commons-io", name = "commons-io", version.ref = "commonsIo" }
 commonsNet = { group = "commons-net", name = "commons-net", version.ref = "commonsNet" }
+commonsLang3 = { group = "org.apache.commons", name = "commons-lang3", version.ref = "commonsLang3" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 retrofitAdapterRxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava", version.ref = "retrofit" }
 nimbusJoseJwt = { group = "com.nimbusds", name = "nimbus-jose-jwt", version.ref = "nimbusJoseJwt" }

@@ -115,6 +115,9 @@ dependencies {
         implementation(libs.okhttp) {
             because "CVE-2023-3635"
         }
+        implementation(libs.commonsLang3) {
+            because "CVE-2025-48924 - force transitive commons-lang3 from 3.8.1 to 3.18.0"
+        }
         pluginLibs(libs.retrofitAdapterRxjava) {
             because "retrofit version by azure affected by CVE-2018-1000844"
         }
@@ -131,6 +134,9 @@ dependencies {
         // This version of okhttp is inline with the one used in Rundeck 5.9.x
         pluginLibs(libs.okhttp) {
             because "CVE-2023-3635"
+        }
+        pluginLibs(libs.commonsLang3) {
+            because "CVE-2025-48924 - force transitive commons-lang3 from 3.8.1 to 3.18.0"
         }
     }
 }
