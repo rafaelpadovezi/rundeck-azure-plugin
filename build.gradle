@@ -51,9 +51,9 @@ repositories {
 // Force resolution of json-smart to mitigate CVE-2023-1370
 configurations.all {
     resolutionStrategy {
-        force 'net.minidev:json-smart:2.5.2'
+        force 'net.minidev:json-smart:2.6.0'
         dependencySubstitution {
-            substitute module('net.minidev:json-smart:2.4.2') using module('net.minidev:json-smart:2.5.2') because 'CVE-2023-1370'
+            substitute module('net.minidev:json-smart:2.4.2') using module('net.minidev:json-smart:2.6.0') because 'CVE-2023-1370'
         }
         // Explicitly reject vulnerable versions
         componentSelection {
