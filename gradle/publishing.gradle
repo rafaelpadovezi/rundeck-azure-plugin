@@ -1,5 +1,4 @@
 apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 publishing {
     publications {
@@ -37,17 +36,5 @@ publishing {
             }
 
         }
-    }
-}
-def base64Decode = { String prop ->
-    project.findProperty(prop) ?
-            new String(Base64.getDecoder().decode(project.findProperty(prop).toString())).trim() :
-            null
-}
-
-if (project.hasProperty('signingKey') && project.hasProperty('signingPassword')) {
-    signing {
-        useInMemoryPgpKeys(base64Decode("signingKey"), project.signingPassword)
-        sign(publishing.publications)
     }
 }
