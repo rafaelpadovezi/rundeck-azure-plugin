@@ -4,5 +4,9 @@
 build
 out
 .gradle
-/.idea
+.idea
 .DS_Store
+bin
+lib
+
+temp/**
