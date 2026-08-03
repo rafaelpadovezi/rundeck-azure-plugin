@@ -62,7 +62,9 @@ class AzureStorageDeleteStepPlugin  implements StepPlugin, Describable {
         String accessKeyStoragePath=configuration.get(AzureStorageDeleteStepPlugin.ACCESS_KEY)
         String containerName=configuration.get(AzureStorageDeleteStepPlugin.CONTAINER_NAME)
         String path=configuration.get(AzureStorageDeleteStepPlugin.BLOB_PATH)
-        String defaultEndpointProtocol=configuration.get(AzureStorageDeleteStepPlugin.DEFAULT_ENDPOINT_PROTOCOL)
+        String defaultEndpointProtocol=AzurePluginUtil.normalizeEndpointProtocol(
+            configuration.get(AzureStorageDeleteStepPlugin.DEFAULT_ENDPOINT_PROTOCOL) as String
+        )
 
 
         String accessKey = AzurePluginUtil.getPasswordFromKeyStorage(accessKeyStoragePath,context);

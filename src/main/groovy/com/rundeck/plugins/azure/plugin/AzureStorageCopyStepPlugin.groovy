@@ -78,7 +78,9 @@ class AzureStorageCopyStepPlugin implements StepPlugin, Describable {
         String accessKeyStoragePath=configuration.get(AzureStorageCopyStepPlugin.ACCESS_KEY)
         String sourcePath=configuration.get(AzureStorageCopyStepPlugin.SOURCE)
         String destinationPath=configuration.get(AzureStorageCopyStepPlugin.DESTINATION)
-        String defaultEndpointProtocol=configuration.get(AzureStorageCopyStepPlugin.DEFAULT_ENDPOINT_PROTOCOL)
+        String defaultEndpointProtocol=AzurePluginUtil.normalizeEndpointProtocol(
+            configuration.get(AzureStorageCopyStepPlugin.DEFAULT_ENDPOINT_PROTOCOL) as String
+        )
 
         URIParser sourceURL = new URIParser(sourcePath)
         URIParser destURL = new URIParser(destinationPath)

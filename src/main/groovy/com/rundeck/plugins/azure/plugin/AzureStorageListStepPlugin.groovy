@@ -67,7 +67,9 @@ class AzureStorageListStepPlugin implements StepPlugin, Describable {
         String accessKeyStoragePath=configuration.get(AzureStorageListStepPlugin.ACCESS_KEY)
         String containerName=configuration.get(AzureStorageListStepPlugin.CONTAINER_NAME)
         boolean recursive=Boolean.valueOf(configuration.get(AzureStorageListStepPlugin.RECURSIVE))
-        String defaultEndpointProtocol=configuration.get(AzureStorageListStepPlugin.DEFAULT_ENDPOINT_PROTOCOL)
+        String defaultEndpointProtocol=AzurePluginUtil.normalizeEndpointProtocol(
+            configuration.get(AzureStorageListStepPlugin.DEFAULT_ENDPOINT_PROTOCOL) as String
+        )
 
         String accessKey = AzurePluginUtil.getPasswordFromKeyStorage(accessKeyStoragePath,context);
 
